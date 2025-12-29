@@ -24,7 +24,9 @@ export function CtaGlowForm() {
         event.currentTarget.reset();
       } else {
         const error = await response.json();
-        alert('Error: ' + (error.error || 'Submission failed'));
+        const errorMsg = error.details || error.error || 'Submission failed';
+        alert('Form submission error: ' + errorMsg);
+        console.error('Server Error:', error);
       }
     } catch (err) {
       console.error(err);
