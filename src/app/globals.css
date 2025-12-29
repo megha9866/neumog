@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --sand-50: #f7f2ea;
+  --sand-100: #f0e5d6;
+  --sand-200: #e6d7c4;
+  --card-surface: #fcf8f3;
+  --card-muted: #f3e8da;
+  --ink-900: #1f140a;
+  --ink-700: #2b1a10;
+  --ink-500: #4a3322;
+  --muted-500: #766556;
+  --muted-400: #8b7c6f;
+  --accent-500: #d0813f;
+  --accent-600: #b55f2f;
+  --accent-200: #f1cda1;
+  --border-soft: rgba(57, 40, 24, 0.12);
+  --glow: 0 24px 80px rgba(36, 20, 8, 0.12);
+
+  --background: var(--sand-50);
+  --foreground: var(--ink-900);
+}
+
+/* Dark Theme - EXACT colors from neumog-dark (client specification) */
+[data-theme="dark"] {
+  --background: #010205;
+  --foreground: #edf2ff;
+
+  --sand-50: #010205;
+  --sand-100: #010205;
+  --sand-200: #010205;
+  --card-surface: #010205;
+  --card-muted: #010205;
+  --ink-900: #edf2ff;
+  --ink-700: #edf2ff;
+  --ink-500: #edf2ff;
+  --muted-500: #edf2ff;
+  --muted-400: #edf2ff;
+  --accent-500: #06b6d4;
+  --accent-600: #0891b2;
+  --accent-200: #67e8f9;
+  --border-soft: rgba(237, 242, 255, 0.1);
+  --glow: 0 24px 80px rgba(6, 182, 212, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, #ffffff 0, var(--sand-50) 40%),
+    radial-gradient(circle at 80% 0%, #fff6ec 0, var(--sand-100) 38%),
+    var(--sand-50);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] body {
+  background:
+    radial-gradient(ellipse 800px 600px at 15% 25%, rgba(6, 182, 212, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse 700px 500px at 85% 55%, rgba(139, 92, 246, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse 600px 400px at 50% 85%, rgba(6, 182, 212, 0.1) 0%, transparent 40%),
+    #010205;
+}
+
+::selection {
+  background-color: rgba(208, 129, 63, 0.35);
+  color: var(--ink-900);
+}
+
+[data-theme="dark"] ::selection {
+  background-color: rgba(6, 182, 212, 0.4);
+  color: #fff;
+}
+
+.noise-overlay {
+  opacity: 0;
+}
+
+[data-theme="dark"] .noise-overlay {
+  opacity: 0.25;
+}
+
+.card-surface {
+  background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.94), var(--card-surface));
+  box-shadow: var(--glow);
+  border: 1px solid var(--border-soft);
+  transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .card-surface {
+  background: linear-gradient(145deg,
+      rgba(28, 33, 48, 0.55) 0%,
+      rgba(14, 17, 26, 0.5) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.pill-border {
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .pill-border {
+  background: rgba(1, 2, 5, 0.75);
+  border: 1px solid var(--border-soft);
+}
