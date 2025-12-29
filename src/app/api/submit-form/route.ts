@@ -66,10 +66,17 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ success: true, message: 'Form submitted successfully' });
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('API Error:', error);
+
+        // Improve error serialization for JSON response
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+        const errorStack = error instanceof Error ? error.stack : undefined;
+
+        console.error('Stack trace:', errorStack);
+
         return NextResponse.json(
-            { error: 'Internal Server Error', details: error.message },
+            { error: 'Internal Server Error', details: errorMessage },
             { status: 500 }
         );
     }
