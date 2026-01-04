@@ -306,7 +306,6 @@ export const footerLinks = {
   company: [
     { label: "About", href: "/about" },
     { label: "Careers", href: "/careers" },
-    { label: "Press", href: "/press" },
   ],
   work: [
     { label: "Case studies", href: "/case-studies" },

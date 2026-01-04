@@ -17,27 +17,29 @@ const TestimonialQuote = dynamic(() => import("@/components/sections/Testimonial
 
 export default function Home() {
   return (
-    <div>
+    <div className="scroll-smooth">
       <HeroMain />
-      <LogoCloud />
-      <FeatureGrid />
+      <div id="clients"><LogoCloud /></div>
+      <div id="guarantee" className="scroll-mt-20"><FeatureGrid /></div>
       <FeatureWithMockup />
       <VerticalCards />
       <StatsStacked />
-      <TestimonialsWall />
-      <section className="bg-[var(--sand-50)] py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <TestimonialQuote
-            quote={testimonials.featured.quote}
-            author={testimonials.featured.author}
-            role={testimonials.featured.role}
-          />
-        </div>
-      </section>
-      <ProcessSteps />
+      <div id="testimonials" className="scroll-mt-20">
+        <TestimonialsWall />
+        <section className="bg-[var(--sand-50)] py-24">
+          <div className="mx-auto max-w-5xl px-6">
+            <TestimonialQuote
+              quote={testimonials.featured.quote}
+              author={testimonials.featured.author}
+              role={testimonials.featured.role}
+            />
+          </div>
+        </section>
+      </div>
+      <div id="process" className="scroll-mt-20"><ProcessSteps /></div>
       <TeamHighlight />
       <BlogTeaserGrid />
-      <FaqSection />
+      <div id="faq" className="scroll-mt-20"><FaqSection /></div>
       <CtaStrip />
     </div>
   );

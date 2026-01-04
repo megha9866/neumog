@@ -46,6 +46,15 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://neumog.tech",
   },
+  icons: {
+    icon: [
+      { url: "/icon/small", sizes: "32x32", type: "image/png" },
+      { url: "/icon/medium", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -54,8 +63,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Neumog",
+              url: "https://neumog.tech",
+              logo: "https://neumog.tech/icon/medium",
+              description: "Managed product delivery, not a marketplace. Trusted experts in product, engineering, data science, and AI/ML.",
+              sameAs: ["https://www.linkedin.com/company/neumog"],
+            }),
+          }}
+        />
         <ThemeProvider>
           <ClientLayout>{children}</ClientLayout>
         </ThemeProvider>
