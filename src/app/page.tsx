@@ -2,6 +2,17 @@ import dynamic from "next/dynamic";
 import { HeroMain } from "@/components/hero/HeroMain";
 import { LogoCloud } from "@/components/sections/LogoCloud";
 import { testimonials } from "@/content/site";
+import { Metadata } from "next";
+
+// Page-specific SEO metadata
+// Important: unique title + description for Google indexing
+export const metadata: Metadata = {
+  title: "Neumog | Product Development Services & Software Engineering",
+  description: "Managed product delivery, not a marketplace. Trusted experts in product, engineering, data science, and AI/ML.",
+  alternates: {
+    canonical: "https://neumog.tech",
+  },
+};
 
 const FeatureGrid = dynamic(() => import("@/components/sections/FeatureGrid").then((mod) => mod.FeatureGrid));
 const FeatureWithMockup = dynamic(() => import("@/components/sections/FeatureWithMockup").then((mod) => mod.FeatureWithMockup));

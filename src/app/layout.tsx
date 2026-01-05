@@ -15,6 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 
+// Root metadata acts as homepage defaults.
+// Individual pages override title, description, and canonical.
 export const metadata: Metadata = {
   title: "Neumog | Product Development Services & Software Engineering",
   description:
@@ -42,19 +44,19 @@ export const metadata: Metadata = {
       "Managed product delivery, not a marketplace. Trusted experts in product, engineering, data science, and AI/ML.",
     images: ["/og-image.jpg"],
   },
-
   alternates: {
     canonical: "https://neumog.tech",
   },
   icons: {
     icon: [
-      { url: "/logo.svg", type: "image/svg+xml" },
-      { url: "/icon/small", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [
-      { url: "/icon/medium", sizes: "180x180", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -65,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Organization structured data for Google rich results */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -73,7 +76,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Neumog",
               url: "https://neumog.tech",
-              logo: "https://neumog.tech/icon/medium",
+              logo: "https://neumog.tech/apple-touch-icon.png",
               description: "Managed product delivery, not a marketplace. Trusted experts in product, engineering, data science, and AI/ML.",
               sameAs: ["https://www.linkedin.com/company/neumog"],
             }),

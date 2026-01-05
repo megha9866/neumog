@@ -7,6 +7,16 @@ import { CtaStrip } from "@/components/sections/CtaStrip";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { testimonials } from "@/content/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Metadata } from "next";
+
+// Page-specific SEO metadata
+export const metadata: Metadata = {
+	title: "How It Works | Neumog",
+	description: "Discover how Neumog orchestrates hybrid delivery. From kickoff to launch in 5 days with internal leads and expert specialists.",
+	alternates: {
+		canonical: "https://neumog.tech/how-it-works",
+	},
+};
 
 const timeline = [
 	{

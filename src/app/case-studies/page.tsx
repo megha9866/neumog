@@ -2,6 +2,16 @@ import { TestimonialQuote } from "@/components/sections/TestimonialQuote";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { CtaStrip } from "@/components/sections/CtaStrip";
 import { testimonials, stats } from "@/content/site";
+import { Metadata } from "next";
+
+// Page-specific SEO metadata
+export const metadata: Metadata = {
+  title: "Case Studies | Neumog",
+  description: "See how Neumog delivers real results for startups and enterprises through hybrid product delivery.",
+  alternates: {
+    canonical: "https://neumog.tech/case-studies",
+  },
+};
 
 const placeholderStats = stats.metrics;
 

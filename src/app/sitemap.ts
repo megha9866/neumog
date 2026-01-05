@@ -5,12 +5,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://neumog.tech";
 
     // Static routes for main pages
+    // Important: keep this updated when adding new pages
     const routes = [
         "",
         "/how-it-works",
         "/services",
+        "/about",
         "/experts",
         "/experts/apply",
+        "/careers",
         "/blog",
         "/start-project",
         "/contact",
