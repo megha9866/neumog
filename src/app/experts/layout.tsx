@@ -2,8 +2,8 @@ import { Metadata } from "next";
 
 // Page-specific SEO metadata
 export const metadata: Metadata = {
-    title: "Expert Collective | Neumog",
-    description: "Join Neumog's Expert Collective. Work on serious product, AI/ML, and data science projects with flexible hours and fair rates.",
+    title: "Neumog | Expert Collective",
+    description: "Join our expert network. Work on cutting-edge product, AI/ML, and data science projects with flexible hours, fair compensation, and real impact.",
     alternates: {
         canonical: "https://neumog.tech/experts",
     },

@@ -2,8 +2,8 @@ import { Metadata } from "next";
 
 // Page-specific SEO metadata
 export const metadata: Metadata = {
-    title: "About Us | Neumog",
-    description: "Learn who we are, what we believe, and how Neumog partners with founders to deliver real products through hybrid squads.",
+    title: "Neumog | About Us",
+    description: "Discover our story. Learn how Neumog is transforming product delivery through hybrid squads. Meet the team building the future of managed software development.",
     alternates: {
         canonical: "https://neumog.tech/about",
     },
